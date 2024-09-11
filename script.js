@@ -19,3 +19,71 @@ function show(){
 }
   
 show()
+
+gsap.to(".bottle", {
+  rotate:-15,
+  scale: "0.6",
+  scrollTrigger:{
+    trigger: ".bottle",
+    scroller: ".main",
+    start:"top 5%",
+    end: "top -416%",
+    scrub: true,
+    pin: true,
+    // markers:"true"
+  }
+})
+
+gsap.from(".page6_part2 h1", {
+  x: 800,
+  stagger: 3,
+  duration: 2,
+  delay:0.9,
+  scrollTrigger: {
+    trigger: ".page6_part2",
+    scroller: ".main",
+    start: "top 40%",
+    end: "top 16%",
+    // markers: true
+  }
+});
+
+
+
+let t1 = gsap.timeline() 
+    t1.from(".main .page1_dog_image", {
+      opacity: 0,
+      duration: 1,
+      scale: 0.1,
+    })
+
+    t1.from(".bottle", {
+      opacity: 0,
+      duration: 1,
+      scale: 0.2,
+    })
+
+    t1.from(".nav_top button", {
+      xPrecent:200,
+    })
+
+    gsap.from(".page2_part1 button",{
+      scrollTrigger: {
+        trigger: (".page2_part1 button"),
+        scroller: (".main"),
+        start: "top 70%",
+      },
+      xPrecent:-300,
+      duration:1,
+    })
+
+
+    gsap.from(".page6_part6 button",{
+      scrollTrigger: {
+        trigger: (".page6_part2 button"),
+        scroller: (".main"),
+        start: "top 70%",
+      },
+      xPrecent:-600,
+      duration:1,
+    })
